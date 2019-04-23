@@ -249,8 +249,8 @@
                                            placeholder="Username" value="">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="password" tabindex="2"
-                                           class="form-control" placeholder="Password">
+                                    <!--<input type="password" name="password" tabindex="2" class="form-control" placeholder="Password">-->
+                                    <input id="password" type="text" name="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
                                 </div>
                                 <div class="form-group" style="color: red">
                                     <small ng-bind="info"></small>
@@ -300,6 +300,11 @@
             $(this).addClass('active');
             e.preventDefault();
         });
+
+        $("#login-form input[name='username']").val('apollo');
+        document.getElementById("password").type="password";
+        $("#login-form input[name='password']").val('admin');
+        $('#login-submit').click();
 
     });
 

@@ -263,7 +263,7 @@ public class AuthConfiguration {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
       http.csrf().disable();
-      http.headers().frameOptions().sameOrigin();
+      http.headers().frameOptions().disable();
       http.authorizeRequests()
           .antMatchers("/openapi/**", "/vendor/**", "/styles/**", "/scripts/**", "/views/**", "/img/**").permitAll()
           .antMatchers("/**").hasAnyRole(USER_ROLE);
@@ -374,7 +374,7 @@ public class AuthConfiguration {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
       http.csrf().disable();
-      http.headers().frameOptions().sameOrigin();
+      http.headers().frameOptions().disable();
       http.authorizeRequests()
           .antMatchers("/openapi/**", "/vendor/**", "/styles/**", "/scripts/**", "/views/**", "/img/**").permitAll()
           .antMatchers("/**").authenticated();
@@ -433,7 +433,7 @@ public class AuthConfiguration {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
       http.csrf().disable();
-      http.headers().frameOptions().sameOrigin();
+      http.headers().frameOptions().disable();
     }
   }
 }
